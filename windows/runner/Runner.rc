@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "zdravkostanin.com" "\0"
-            VALUE "FileDescription", "new_flutter_app" "\0"
+            VALUE "FileDescription", "hackathon_unibit_2024" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "new_flutter_app" "\0"
+            VALUE "InternalName", "hackathon_unibit_2024" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2024 zdravkostanin.com. All rights reserved." "\0"
-            VALUE "OriginalFilename", "new_flutter_app.exe" "\0"
-            VALUE "ProductName", "new_flutter_app" "\0"
+            VALUE "OriginalFilename", "hackathon_unibit_2024.exe" "\0"
+            VALUE "ProductName", "hackathon_unibit_2024" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

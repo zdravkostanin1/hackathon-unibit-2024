@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:new_flutter_app/src/pages/exercise_details/view/exercise_details_page.dart';
+import 'package:hackathon_unibit_2024/src/pages/exercise_details/view/exercise_details_page.dart';
 
 class ExercisesPage extends StatelessWidget {
   const ExercisesPage({super.key});

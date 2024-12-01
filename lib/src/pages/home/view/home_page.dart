@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
-import 'package:new_flutter_app/src/pages/daily_vitamins/view/daily_vitamins_page.dart';
-import 'package:new_flutter_app/src/pages/exercises/view/exercises_page.dart';
-import 'package:new_flutter_app/src/pages/food_water_intake/view/food_water_intake_page.dart';
-import 'package:new_flutter_app/src/pages/home/widgets/circular_icon_button.dart';
-import 'package:new_flutter_app/src/pages/home/widgets/profile_widget.dart';
-import 'package:new_flutter_app/src/pages/home/widgets/wave_clipper.dart';
-import 'package:new_flutter_app/src/pages/meditation/view/meditation_page.dart';
+import 'package:hackathon_unibit_2024/src/pages/daily_vitamins/view/daily_vitamins_page.dart';
+import 'package:hackathon_unibit_2024/src/pages/exercises/view/exercises_page.dart';
+import 'package:hackathon_unibit_2024/src/pages/food_water_intake/view/food_water_intake_page.dart';
+import 'package:hackathon_unibit_2024/src/pages/home/widgets/circular_icon_button.dart';
+import 'package:hackathon_unibit_2024/src/pages/home/widgets/profile_widget.dart';
+import 'package:hackathon_unibit_2024/src/pages/home/widgets/wave_clipper.dart';
+import 'package:hackathon_unibit_2024/src/pages/meditation/view/meditation_page.dart';
 import 'package:page_transition/page_transition.dart';
 
 class HomePage extends StatefulWidget {

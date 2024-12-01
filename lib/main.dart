@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:new_flutter_app/app.dart';
+import 'package:hackathon_unibit_2024/app.dart';
 
 void main() {
   runApp(const App());

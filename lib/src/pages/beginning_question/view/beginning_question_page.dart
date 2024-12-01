@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:new_flutter_app/src/pages/congratulations/view/congratulations_page.dart';
-import 'package:new_flutter_app/src/pages/details/view/details_page.dart';
+import 'package:hackathon_unibit_2024/src/pages/congratulations/view/congratulations_page.dart';
+import 'package:hackathon_unibit_2024/src/pages/details/view/details_page.dart';
 import 'package:page_transition/page_transition.dart';
 
 class BeginningQuestionPage extends StatelessWidget {

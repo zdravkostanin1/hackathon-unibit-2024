@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:new_flutter_app/src/pages/beginning_question/view/beginning_question_page.dart';
-import 'package:new_flutter_app/src/utils/constants.dart';
+import 'package:hackathon_unibit_2024/src/pages/beginning_question/view/beginning_question_page.dart';
+import 'package:hackathon_unibit_2024/src/utils/constants.dart';
 import 'package:page_transition/page_transition.dart';
 
 class IntroductionPage extends StatelessWidget {

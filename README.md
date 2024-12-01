@@ -1,4 +1,4 @@
-# new_flutter_app
+# hackathon_unibit_2024
 
 A template project for any Flutter application that I create.
 

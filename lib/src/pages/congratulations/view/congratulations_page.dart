@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:new_flutter_app/src/pages/home/view/home_page.dart';
+import 'package:hackathon_unibit_2024/src/pages/home/view/home_page.dart';
 import 'package:page_transition/page_transition.dart';
 
 class CongratulationsOnYourJourneyPage extends StatefulWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:new_flutter_app/src/pages/introduction/view/introduction_page.dart';
+import 'package:hackathon_unibit_2024/src/pages/introduction/view/introduction_page.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
