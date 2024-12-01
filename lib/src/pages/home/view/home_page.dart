@@ -43,9 +43,7 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(width: 10),
                     CircularIconButton(
                       icon: Icons.drag_handle,
-                      onPressed: () {
-                        print("Icon button pressed");
-                      },
+                      onPressed: () {},
                     ),
                   ],
                 ),
@@ -110,151 +108,91 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(height: 20),
                 const Padding(
                   padding: EdgeInsets.only(left: 8.0, bottom: 8.0),
-                  child: Text('Today\'s must dos',
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                  child: Text(
+                    'Today\'s must dos',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    widget.isInPregnancy
-                        ? Expanded(
-                            child: SizedBox(
-                              height: 200,
-                              child: InkWell(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    PageTransition(
-                                      type: PageTransitionType.rightToLeft,
-                                      child: const MeditationPage(),
-                                      duration: const Duration(milliseconds: 300),
+                    Expanded(
+                      child: SizedBox(
+                        height: 200,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              PageTransition(
+                                type: PageTransitionType.rightToLeft,
+                                child: widget.isInPregnancy
+                                    ? const MeditationPage()
+                                    : const ExercisesPage(),
+                                duration: const Duration(milliseconds: 300),
+                              ),
+                            );
+                          },
+                          child: Stack(
+                            children: [
+                              ClipPath(
+                                clipper: WaveClipper(),
+                                child: Container(
+                                  decoration: const BoxDecoration(
+                                    gradient: LinearGradient(
+                                      colors: [
+                                        Color(0xffF7F7F7),
+                                        Color(0xffE0E4FF),
+                                      ],
+                                      begin: Alignment.topLeft,
+                                      end: Alignment.bottomRight,
                                     ),
-                                  );
-                                },
-                                child: Stack(
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    ClipPath(
-                                      clipper: WaveClipper(),
-                                      child: Container(
-                                        decoration: const BoxDecoration(
-                                          gradient: LinearGradient(
-                                            colors: [
-                                              Color(0xffF7F7F7),
-                                              Color(0xffE0E4FF)
-                                            ],
-                                            begin: Alignment.topLeft,
-                                            end: Alignment.bottomRight,
-                                          ),
-                                        ),
-                                      ),
+                                    SizedBox(
+                                      height: 48,
+                                      child: Image.asset(widget.isInPregnancy
+                                          ? 'assets/images/gym.png'
+                                          : 'assets/images/dumbbell.png'),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(16.0),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          SizedBox(
-                                              height: 48,
-                                              child: Image.asset(
-                                                  'assets/images/gym.png')),
-                                          const SizedBox(height: 8),
-                                          const Padding(
-                                            padding:
-                                                EdgeInsets.only(bottom: 20.0),
-                                            child: Text(
-                                              "Daily Meditation",
-                                              style: TextStyle(
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                            ),
-                                          ),
-                                        ],
+                                    const SizedBox(height: 8),
+                                    Text(
+                                      widget.isInPregnancy
+                                          ? "Daily Meditation"
+                                          : "Exercises",
+                                      style: const TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold,
                                       ),
                                     ),
                                   ],
                                 ),
                               ),
-                            ),
-                          )
-                        : Expanded(
-                            child: SizedBox(
-                              height: 200,
-                              child: InkWell(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    PageTransition(
-                                      type: PageTransitionType.rightToLeft,
-                                      child: const ExercisesPage(),
-                                      duration:
-                                          const Duration(milliseconds: 300),
-                                    ),
-                                  );
-                                },
-                                child: Stack(
-                                  children: [
-                                    ClipPath(
-                                      clipper: WaveClipper(),
-                                      child: Container(
-                                        decoration: const BoxDecoration(
-                                          gradient: LinearGradient(
-                                            colors: [
-                                              Color(0xffF7F7F7),
-                                              Color(0xffE0E4FF)
-                                            ],
-                                            begin: Alignment.topLeft,
-                                            end: Alignment.bottomRight,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(16.0),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          SizedBox(
-                                            height: 48,
-                                            child: Image.asset(
-                                                'assets/images/dumbbell.png'),
-                                          ),
-                                          const SizedBox(height: 8),
-                                          const Padding(
-                                            padding:
-                                                EdgeInsets.only(bottom: 20.0),
-                                            child: Text(
-                                              "Exercises",
-                                              style: TextStyle(
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
+                            ],
                           ),
+                        ),
+                      ),
+                    ),
                     const SizedBox(width: 16),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          PageTransition(
-                            type: PageTransitionType.rightToLeft,
-                            child: const DailyVitaminsPage(),
-                            duration: const Duration(milliseconds: 300),
-                          ),
-                        );
-                      },
-                      child: Expanded(
+                    Expanded(
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            PageTransition(
+                              type: PageTransitionType.rightToLeft,
+                              child: const DailyVitaminsPage(),
+                              duration: const Duration(milliseconds: 300),
+                            ),
+                          );
+                        },
                         child: SizedBox(
                           height: 200,
                           child: Card(
@@ -264,25 +202,26 @@ class _HomePageState extends State<HomePage> {
                               borderRadius: BorderRadius.circular(16),
                             ),
                             child: Padding(
-                              padding: EdgeInsets.all(16.0),
+                              padding: const EdgeInsets.all(16.0),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   SizedBox(
-                                      height: 48,
-                                      child: Image.asset(
-                                          'assets/images/vitamins.png')),
+                                    height: 48,
+                                    child: Image.asset(
+                                        'assets/images/vitamins.png'),
+                                  ),
                                   const SizedBox(height: 8),
                                   const Text(
-                                    "Daily vitamins",
+                                    "Daily Vitamins",
                                     style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold,
                                     ),
                                     textAlign: TextAlign.center,
                                   ),
-                                  SizedBox(height: 8),
-                                  Text(
+                                  const SizedBox(height: 8),
+                                  const Text(
                                     "• Folic Acid\n• Iron\n• Calcium",
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
@@ -300,7 +239,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 const SizedBox(height: 20),
                 const Padding(
-                  padding: const EdgeInsets.only(left: 8.0, bottom: 8.0),
+                  padding: EdgeInsets.only(left: 8.0, bottom: 8.0),
                   child: Text(
                     "Trackers",
                     style: TextStyle(
@@ -310,7 +249,6 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 const SizedBox(height: 10),
-                // Trackers Section
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -329,7 +267,7 @@ class _HomePageState extends State<HomePage> {
                       borderRadius: BorderRadius.circular(16),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.all(16.0),
+                      padding: const EdgeInsets.all(16.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
@@ -341,10 +279,14 @@ class _HomePageState extends State<HomePage> {
                                   child: Image.asset('assets/images/diet.png')),
                             ],
                           ),
-                          SizedBox(height: 10),
-                          Text("Food & water intake",
-                              style: TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.bold)),
+                          const SizedBox(height: 10),
+                          const Text(
+                            "Food & water intake",
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -400,7 +342,7 @@ class _HomePageState extends State<HomePage> {
                                         BoxShadow(
                                           color: Colors.black.withOpacity(0.1),
                                           blurRadius: 8,
-                                          offset: Offset(0, 4),
+                                          offset: const Offset(0, 4),
                                         ),
                                       ],
                                     ),
@@ -498,16 +440,13 @@ class _HomePageState extends State<HomePage> {
                                           height: 40,
                                           decoration: const BoxDecoration(
                                             color: Colors.white,
-                                            // Circle background color
                                             shape: BoxShape.circle,
                                           ),
                                           alignment: Alignment.center,
                                           child: const Text(
                                             '5',
-                                            // Replace '5' with your dynamic days integer
                                             style: TextStyle(
                                               color: Colors.green,
-                                              // Text color matching the container
                                               fontSize: 20,
                                               fontWeight: FontWeight.bold,
                                             ),
@@ -586,7 +525,7 @@ class _NavBarState extends State<NavBar> {
         onPageChanged: _onPageChanged,
         children: [
           HomePage(isInPregnancy: widget.isInPregnancy),
-          const ExercisesPage(),
+          widget.isInPregnancy ? const MeditationPage() : const ExercisesPage(),
           const DailyVitaminsPage(),
           const FoodWaterIntakePage(),
           // const HomePage(isInPregnancy: false),
@@ -610,7 +549,9 @@ class _NavBarState extends State<NavBar> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              widget.isInPregnancy ? LucideIcons.target : LucideIcons.person_standing,
+              widget.isInPregnancy
+                  ? LucideIcons.target
+                  : LucideIcons.person_standing,
               size: 30,
               color: Colors.black,
             ),
